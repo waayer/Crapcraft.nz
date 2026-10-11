@@ -11,6 +11,9 @@ fetch("./stats.json")
       document.getElementById("immich-videos").textContent = data.Videos;
       document.getElementById("immich-disk").textContent = data.Disk;
       document.getElementById("immich-diskav").textContent = data.DiskAv;
+      document.getElementById("tracearr-streams").textContent = data.ActiveStreams;
+      document.getElementById("tracearr-sessions").textContent = data.TotalSessions;
+      document.getElementById("tracearr-users").textContent = data.TotalUsers;
     });
   //i dont know the exact stackoverflow page i got this from but all this does is grab the stats from stats.json
   //and stores it as i call it "html variables" so that the html can display the stats
