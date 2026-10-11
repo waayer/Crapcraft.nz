@@ -35,7 +35,7 @@ TRACEARR_HEADERS = {
 
 #jellyfin function that grabs the url from variable and uses headers to insert the api key into the http/api request and then filters the data only keeping MovieCount EpisodeCount and SongCount
 def jellyfin():
-    response = requests.get(f"{JELLYFIN_URL}/Items/Counts", headers=JF_HEADERS)
+    response = requests.get(f"{JELLYFIN_URL}/Items/Counts", headers=JF_HEADERS, timeout=5)
     data = response.json()
     return {
         "MovieCount": data["MovieCount"],
@@ -45,7 +45,7 @@ def jellyfin():
 
 #seerr function that when run querys the api and filters out results only keeping total, pending and approved
 def seerr():
-    response = requests.get(f"{SEERR_URL}/api/v1/request/count", headers=SEERR_HEADERS)
+    response = requests.get(f"{SEERR_URL}/api/v1/request/count", headers=SEERR_HEADERS, timeout=5)
     data = response.json()
     return {
         "RequestsTotal": data["total"],
@@ -55,10 +55,10 @@ def seerr():
 
 #immich function that grabs photo/video counts from /statistics and disk usage from /storage, then merges both into one dict
 def immich():
-    response = requests.get(f"{IMMICH_URL}/api/server/statistics", headers=IMMICH_HEADERS) #this calls the immich api to get the server stats (photos and videos)
+    response = requests.get(f"{IMMICH_URL}/api/server/statistics", headers=IMMICH_HEADERS, timeout=5) #this calls the immich api to get the server stats (photos and videos)
     data = response.json()
 
-    response2 = requests.get(f"{IMMICH_URL}/api/server/storage", headers=IMMICH_HEADERS)  # This calls the Immich API to get system storage info.
+    response2 = requests.get(f"{IMMICH_URL}/api/server/storage", headers=IMMICH_HEADERS, timeout=5)  # This calls the Immich API to get system storage info.
     data2 = response2.json()
 
     return {
@@ -69,7 +69,7 @@ def immich():
     }
 
 def tracearr():
-    response = requests.get(f"{TRACEARR_URL}/api/v1/public/stats", headers=TRACEARR_HEADERS)
+    response = requests.get(f"{TRACEARR_URL}/api/v1/public/stats", headers=TRACEARR_HEADERS, timeout=5)
     data = response.json()
 
     return {
