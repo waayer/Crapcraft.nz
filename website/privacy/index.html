@@ -50,117 +50,39 @@
 <main>
     <nav>
         <h1>Privacy Policy and TOS</h1>
-        <p><em>Last updated: 25 September 2026 (NZ Time)</em></p>
+        <p><em>Last updated: 15 October 2026 (NZ Time)</em></p>
 
         <h2>Privacy Policy</h2>
 
-        <h3>1. Who We Are</h3>
-        <p>crapcraft.nz is a privately operated hobbyist platform hosted in New Zealand. It is not a business, generates no revenue, and is run by a single individual for personal use and a small friend group.</p>
-        <p>By using any service under the crapcraft.nz domain, you agree to the terms described here.</p>
+        <h3>What Data We Collect</h3>
+        <p>crapcraft.nz is a privately operated hobby platform hosted in New Zealand. The administrator, waayer, is responsible for the personal information held by these services and can be contacted at <a href="mailto:admin@crapcraft.nz">admin@crapcraft.nz</a>.</p>
+        <p>We try to collect as little data as possible. Cloudflare analytics are disabled, and our web server (Caddy) does not collect usage data. Hosted applications may still process account details, IP addresses, approximate location derived from an IP address, device information, and the content you submit. The disclosures below cover that collection.</p>
 
-        <h3>2. What We Collect</h3>
-        <p>The following is a summary of what data each service may collect:</p>
-        <p><strong>All Services:</strong> The reverse proxy (Caddy) logs only the timestamp, HTTP method, host, requested path, status code, and response size. IP addresses, user agents, cookies, and all other request headers are <strong>not</strong> logged. Individual applications behind the proxy may keep their own minimal logs for security and debugging.</p>
-        <p><strong>Authentik:</strong> Username, email address, hashed password, login timestamps, session tokens - used for account authentication and access control.</p>
-        <p><strong>Jellyfin:</strong> Username, playback history, media preferences, device info - used for media streaming functionality and watch history. This tracked activity is handled by Tracearr.</p>
-        <p><strong>Immich:</strong> Photos and videos you upload, EXIF metadata (may include GPS location, camera info, timestamps) - used for photo library hosting, stored only for your use.</p>
-        <p><strong>Seerr:</strong> Username, media request history, linked Jellyfin account - used for media request management.</p>
-        <p><strong>WireGuard VPN:</strong> No traffic logs are kept. WireGuard only holds handshake metadata (public keys, timestamps) in memory - nothing is written to disk unless debug logging is explicitly enabled.</p>
-        <p><strong>Homepage &amp; Guides (crapcraft.nz):</strong> Static site, no accounts required. Covered by the minimal proxy logs described above - no personal data collected.</p>
-        <p><strong>FMD:</strong> Device location, battery status, and push commands (all end-to-end encrypted - not readable by us), used for Find My Device functionality. FMD also maintains its own <a href="https://fmd.crapcraft.nz/privacy" target="_blank">privacy policy</a>.</p>
-        <p><strong>Notes:</strong> Documents and content you create, username via Authentik SSO - used for note-taking and document storage.</p>
-        <p><strong>Vaultwarden:</strong> Encrypted vault data (client-side encrypted - not readable by us), account email, IP address - used for password manager functionality.</p>
-        <p><strong>ntfy:</strong> Topic subscriptions, notification delivery metadata - used for push notifications for platform services.</p>
-        <p><strong>SearXNG:</strong> Search queries (not logged or stored beyond the request) - used for privacy-respecting search aggregation.</p>
-        <p><strong>Uptime Kuma:</strong> No personal data collected via the public status page - service uptime metrics only.</p>
-        <p><strong>Zipline:</strong> Files uploaded by the administrator, access timestamps, IP addresses of viewers - used as a CDN for hosting publicly viewable files (images, video, audio, etc.)</p>
-        <p><strong>Media Automation (Sonarr, Radarr, Prowlarr, qBittorrent):</strong>Access is gated by a reverse-proxy login (Authentik) placed in front of them. Each tool separately logs search and download history and indexer API interactions - used for automated media acquisition and management; access is restricted to authorised users.</p>
-        <p>Reverse-proxy logs contain no personal information (no IPs, user agents, or headers). Some individual services may log IP addresses as part of normal operation for security purposes; these are never sold, shared with third parties, or used for advertising.</p>
-        <p>Note on encrypted services: FMD and Vaultwarden use client-side or end-to-end encryption. The server stores encrypted data only - the administrator cannot read the contents under any circumstances.</p>
+        <h4>Hosted Services</h4>
+        <p>The administrator operates the services and can access account information and operational records to provide support, secure accounts, and diagnose faults. The recipients and retention rules below apply alongside the shared rules in the next section.</p>
+        <p><strong>Authentik:</strong> Username, email address, hashed password, login timestamps, and session tokens are used for authentication and access control. Account identity is provided to the services you sign in to. Account details are retained for the lifetime of your account; session tokens are retained until they expire or are revoked.</p>
+        <p><strong>Jellyfin and Tracearr:</strong> Username, playback history, media preferences, device information, IP addresses, and approximate location are used to stream media, maintain watch history, monitor playback, and detect account abuse. Jellyfin activity is processed by Tracearr and is available to the administrator. Account and playback records are retained while your account is active and needed for these purposes; you can request their removal.</p>
+        <p><strong>Immich:</strong> Uploaded photos and videos and their EXIF metadata (which may include GPS location, camera details, and timestamps) are used to host your photo library. Content is available to you and anyone you choose to share it with, and the administrator has server access. Media and metadata are retained until you delete them or your account is removed.</p>
+        <p><strong>Seerr:</strong> Username, linked Jellyfin account, and media request history are used to manage requests. Requests are available to the administrator and passed to the media automation services for fulfilment. Account and request records are retained while needed to manage your account and requests; you can request their removal.</p>
+        <p><strong>WireGuard VPN:</strong> Public keys and peer configuration are used to authorise VPN access and retained until access is removed. Handshake timestamps and connection metadata are held in memory to establish connections. The administrator manages peer configuration; no traffic logs are kept.</p>
+        <p><strong>Find My Device (FMD):</strong> Encrypted device location, battery status, and push commands are used to locate and manage your device. Encrypted content is delivered to your authorised devices; the administrator operates the server but cannot read the encrypted payloads. Device records are retained while needed for your registered device, until deleted or the registration is removed. See the <a href="https://fmd.crapcraft.nz/privacy">FMD privacy policy</a> for service-specific handling.</p>
+        <p><strong>Anchor (Notes):</strong> Documents, content you create, and your username from Authentik are used for note-taking and document storage. Content is available to you, people you share it with, and the administrator with server access. It is retained until you delete it or your account is removed.</p>
+        <p><strong>Vaultwarden:</strong> Client-side encrypted vault data, account email, and IP address are used to store and synchronise your password vault and secure access. Encrypted vault data is delivered to your authorised clients; the administrator can access account metadata but cannot read the encrypted vault contents without your decryption keys. Vault data is retained until you delete it or your account is removed.</p>
+        <p><strong>ntfy:</strong> Topic subscriptions, notification content, and delivery metadata are used to send push notifications. Notifications are delivered to subscribers to the topic, so do not put sensitive information in a public topic. Subscriptions are retained while active; cached notifications and delivery records are retained only while needed for delivery and troubleshooting.</p>
+        <p><strong>SearXNG:</strong> Search queries are processed to aggregate search results and sent to the search providers selected for the request. Queries are not logged or stored locally beyond the request. Those providers process received queries under their own privacy policies; avoid including personal information in searches.</p>
+        <p><strong>Zipline:</strong> Files uploaded by the administrator are served publicly; anyone with a file link can receive the content. Viewer IP addresses and access timestamps are used to deliver files and investigate abuse. Files are retained until removed by the administrator; access records are retained only as long as needed for security and troubleshooting.</p>
+        <p><strong>Media automation (Sonarr, Radarr, Prowlarr, qBittorrent):</strong> Authentik controls access. Search and download history and indexer API interactions are used to acquire and manage media. The administrator and authorised users can access these records; searches and download requests go to the relevant indexers, download providers, and torrent peers. Local history is retained for the lifetime of the service and can be cleared on request.</p>
+        <p><strong>Homepage, Guides, and Uptime Kuma:</strong> The static website and public status page require no account. Uptime Kuma publishes service availability metrics. Caddy usage logging and Cloudflare analytics are disabled, but Cloudflare still processes connection information as described below. The homepage also publishes aggregate media, request, storage, and Tracearr usage counts.</p>
 
-        <h3>3. How We Use Your Data</h3>
-        <p>Data is used solely to operate these services - to authenticate you, deliver functionality, identify abuse, and diagnose bugs.</p>
-        <p>Your data is NEVER sold, used for advertising, shared with third parties, or processed for any commercial purpose. Full stop.</p>
+        <h4>Shared Purposes, Recipients, and Retention</h4>
+        <p>Information is used to provide the service you choose, authenticate you, deliver content, prevent abuse, and resolve faults. Where GDPR applies, processing needed to provide a requested service is based on performance of that service agreement (Article 6(1)(b)); security and troubleshooting are based on our legitimate interests in keeping the services secure and reliable (Article 6(1)(f)). Account details and content are voluntary, but without the information needed for a feature we cannot provide it.</p>
+        <p>Service data is stored on privately owned hardware in New Zealand. <strong>Cloudflare</strong> handles tunnelling and DDoS protection and receives IP addresses and request metadata even with analytics disabled. It may process information outside New Zealand and the EEA. Its recipients, retention criteria, and transfer safeguards are described in <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>. Search and download providers may also process requests outside these regions under their own policies.</p>
+        <p>If you use <strong>Discord</strong> to sign in through Authentik or contact the administrator, Discord processes your account and interaction data, and Authentik receives the identity details you authorise. Local identity data follows the Authentik retention rules; Discord's own retention and recipients are covered by <a href="https://discord.com/privacy">Discord's privacy policy</a>.</p>
+        <p>Personal information is not sold or used for advertising. In addition to the recipients identified above, information may be disclosed where legally required. Application security and diagnostic records, including IP addresses and device metadata, are kept only as long as needed to resolve faults or investigate abuse. Account data is retained for the lifetime of the account and can be removed on request, subject to applicable legal requirements. Functional login cookies and session tokens remain until expiry or revocation. Provider retention is governed by the linked provider policies.</p>
 
-        <h3>4. Where Data is Stored</h3>
-        <p>All data is stored on privately owned hardware and operated in New Zealand</p>
-        <p>Network traffic passes through Cloudflare for DDoS protection and tunnelling - they may process IP addresses and request metadata in transit. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare's Privacy Policy</a>.</p>
-
-        <h3>5. Your Rights (NZ Privacy Act 2020)</h3>
-        <p>Under the New Zealand Privacy Act 2020 and the Privacy Amendment Act 2025, you have the right to access, correct, or delete any personal information held about you, and to know how it is being used.</p>
-        <p>The Privacy Amendment Act 2025 introduced IPP 3A (in force from 1 May 2026), which requires that when personal information is collected indirectly - such as IP addresses and server logs - you are notified of that collection. This privacy policy serves as that notification.</p>
-        <p>Contact the administrator using the details below. Requests will be responded to within 20 working days, as required by the Act.</p>
-
-        <h3>6. Data Retention</h3>
-        <p>Server access logs: retained for 7 days for security and debugging purposes, then automatically cleared.</p>
-        <p>Account data: retained for the lifetime of your account, deleted on request.</p>
-        <p>Immich media: retained until you delete it or your account is removed.</p>
-        <p>Zipline files: retained until removed by the administrator.</p>
-        <p>Notes content: retained until you delete it or your account is removed.</p>
-        <p>Vaultwarden vault: retained until you delete it or your account is removed. Contents are encrypted and unreadable by the administrator.</p>
-        <p>WireGuard VPN: no logs retained.</p>
-        <p>SearXNG queries: not stored beyond the duration of the request.</p>
-        <p>Uptime Kuma: no personal data is stored or retained. only uptime monitoring metrics are kept.</p>
-        <p>Media automation data: search and download history retained for the lifetime of the service. Can be cleared on request.</p>
-
-        <h3>7. Children's Privacy</h3>
-        <p>These services are not intended for anyone under the age of 13. If you are under 13, do not use these services or provide any personal information.</p>
-
-        <h3>8. Changes to This Policy</h3>
-        <p>This policy may be updated from time to time. The date at the top of this page reflects the most recent revision. Continued use of the services after changes constitutes acceptance of the updated policy.</p>
-
-        <h2>Terms of Service</h2>
-
-        <h3>1. Acceptance of Terms</h3>
-        <p>By accessing or using any service under crapcraft.nz, you agree to these Terms of Service. If you do not agree, do not use the services. These terms apply to all users including guests, registered accounts, and Discord bot users.</p>
-
-        <h3>2. Acceptable Use</h3>
-        <p><strong>Short version:</strong> Don't fuck up the system.</p>
-        <p>This is someone's personal server, shared with a small group of friends, for free, out of pocket. You are a guest here. Act like one.</p>
-        <p>Specifically: don't attempt to gain unauthorised access to any system or data, don't upload or distribute illegal content, don't harass other users, don't abuse or intentionally disrupt services (DDoS, brute force, scanning, spamming), and don't use anything here for commercial purposes without explicit permission.</p>
-        <p>Don't be a dick. If you're not sure whether something is okay, ask first.</p>
-        <p><strong>Break these rules and you're gone.</strong> No warnings, no second chances. Your account will be deleted, your data wiped, and your IP banned. You fuck with the server, you lose access. Permanently.</p>
-
-        <h3>3. Account Responsibility</h3>
-        <p>You are responsible for maintaining the security of your credentials and for all activity that occurs under your account. Accounts found in violation of these terms may be suspended or permanently banned without notice.</p>
-        <p>If you need a place to store your credentials use our <a href="https://vault.crapcraft.nz" target="_blank">Vaultwarden</a> Instance</p>
-
-        <h3>4. Availability &amp; Reliability</h3>
-        <p>These are hobby services provided as-is, with no uptime guarantees. Maintenance, downtime, and data loss are possible. Do not rely on these services for anything critical.</p>
-        <p>The status page (<a href="https://uptime.crapcraft.nz" target="_blank">uptime.crapcraft.nz</a>)</p>
-        <p>The administrator reserves the right to modify, suspend, or shut down any service at any time, with or without notice.</p>
-
-        <h3>5. Content You Upload</h3>
-        <p>You retain ownership of content you upload. By uploading, you grant the administrator a limited right to store and serve that content to you as part of the service.</p>
-        <p>You must not upload content that is illegal under New Zealand law, including child sexual abuse material, content inciting violence or hatred.</p>
-
-        <h3>6. Limitation of Liability</h3>
-        <p>These services are run by one person, on personal hardware, in their spare time. Things will occasionally break - sometimes due to hardware failure, sometimes due to administrator error. Every reasonable effort will be made to fix issues promptly, but there are no guarantees of uptime, data integrity, or uninterrupted access. Use these services with that in mind, and don't rely on them for anything critical.</p>
-        <p>The administrator is not liable for any loss or inconvenience resulting from service outages, data loss, or security incidents beyond their reasonable control.</p>
-
-        <h3>7. Governing Law</h3>
-        <p>These terms are governed by the laws of New Zealand. Any disputes are subject to the exclusive jurisdiction of New Zealand courts.</p>
-
-        <h2>Cookies &amp; Logs</h2>
-
-        <h3>1. Cookies</h3>
-        <p>Only functional cookies are used - strictly necessary for services to operate. No tracking, advertising, or analytics cookies.</p>
-        <p><strong>Session token</strong> (Authentik): keeps you logged in across services. Duration: session / configurable.</p>
-        <p><strong>Media session</strong> (Jellyfin): remembers your login and preferences. Duration: session.</p>
-        <p><strong>Vault session</strong> (Vaultwarden): keeps you logged in to the password manager. Duration: session / configurable.</p>
-        <p><strong>__cf_bm, cf_clearance</strong> (Cloudflare): DDoS protection and bot detection. Duration: varies.</p>
-        <p>No cookie consent banner is shown because only strictly necessary functional cookies are used. If that changes, a consent banner will be added.</p>
-
-        <h3>2. Server Access Logs</h3>
-        <p>Server access logs are retained for 7 days for security and debugging purposes, then automatically cleared.</p>
-
-        <h3>3. Analytics</h3>
-        <p>We do not use Google Analytics, Plausible, or any third-party analytics platform. No behavioural tracking is performed.</p>
-
-        <h3>4. Third-Party Services</h3>
-        <p><strong>Cloudflare</strong> - handles DNS and tunnelling, processes IP addresses in transit. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Privacy Policy</a></p>
-        <p><strong>Discord</strong> - bot interactions happen within Discord's platform. <a href="https://discord.com/privacy" target="_blank">Privacy Policy</a></p>
-        <p><strong>FMD</strong> - has its own privacy policy covering device data handling. <a href="https://fmd.crapcraft.nz/privacy" target="_blank">Privacy Policy</a></p>
+        <h4>Your Rights</h4>
+        <p>Under the New Zealand Privacy Act 2020, where applicable, you can request access to and correction of your personal information. If a correction is declined, you can ask for a statement of correction to be attached. You can also ask us to remove your account or content. Contact the administrator below; access and correction requests will be decided within 20 working days, subject to any lawful extension. You can complain to the <a href="https://www.privacy.org.nz/">New Zealand Privacy Commissioner</a>.</p>
+        <p>Where GDPR applies, you may request access, rectification, erasure, restriction of processing, and data portability, subject to the conditions and exceptions for each right. You may object to processing based on legitimate interests and withdraw consent where processing relies on consent, without affecting the lawfulness of earlier processing. Contact the administrator below to exercise these rights. Requests will be answered within one month, subject to a permitted extension, and you may complain to your competent data protection supervisory authority.</p>
 
         <h2>Contact</h2>
         <p><strong>Administrator:</strong> <a href="mailto:admin@crapcraft.nz">admin@crapcraft.nz</a></p>
