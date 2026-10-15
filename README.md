@@ -1,7 +1,7 @@
 
-# Crapcraft.nz
+# waayer.org
 
-This is the source code for the website at [crapcraft.nz](https://crapcraft.nz)
+This is the source code for the website at [waayer.org](https://waayer.org)
 
 everyone is allowed to use this code/repurpose it for their website
 
