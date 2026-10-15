@@ -1,14 +1,14 @@
-crapcraft.nz Security Policy
+waayer.org Security Policy
 =============================
 
-The operator of crapcraft.nz is a hobbyist with limited security expertise.
+The operator of waayer.org is a hobbyist with limited security expertise.
 Any assistance, responsible disclosure, or advice regarding the security of
 this platform is genuinely appreciated.
 
 If you find a vulnerability or have security concerns, please contact:
 
-  Email: admin@crapcraft.nz
-  Discord: waayer (prefered option so i can actually reply to you)
+  Email: admin@waayer.org
+  Discord: waayer
 
 We will do our best to respond promptly and appreciate your patience.
 
